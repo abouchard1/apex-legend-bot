@@ -21,7 +21,7 @@ DISCORD_TOKEN=xxxxx CHAN_ID=yyyyy node main
 
 xxxxx = Votre token discord [Tuto](#récupérer-son-token-discord)
 
-yyyyy = Votre id de channel [Tuto](#récupérer-son-id-de-channel-id-channel)
+yyyyy = Votre id de channel [Tuto](#récupérer-son-id-de-channel)
 
 #### Créer son bot sur le site Discord
 - Aller sur la page d'application https://discordapp.com/developers/applications/

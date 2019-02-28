@@ -19,9 +19,9 @@ npm install
 DISCORD_TOKEN=xxxxx CHAN_ID=yyyyy node main
 ```
 
-xxxxx = Votre token discord cf .https://github.com/twinzxr1/apex-legend-bot/blob/master/README.md#r%C3%A9cup%C3%A9rer-son-token-discord
+xxxxx = Votre token discord [Tuto](#id-token)
 
-yyyyy = Votre id de channel cf.https://github.com/twinzxr1/apex-legend-bot/blob/master/README.md#r%C3%A9cup%C3%A9rer-son-id-de-channel
+yyyyy = Votre id de channel [Tuto](#id-channel)
 
 #### Créer son bot sur le site Discord
 - Aller sur la page d'application https://discordapp.com/developers/applications/
@@ -31,12 +31,12 @@ yyyyy = Votre id de channel cf.https://github.com/twinzxr1/apex-legend-bot/blob/
   remplacer le APP_ID par votre Client/Application ID
 - Sélectionner votre serveur
 
-#### Récupérer son token discord
+#### Récupérer son token discord {#id-token}
 - Aller sur la page d'application https://discordapp.com/developers/applications/
 - Sélectionner votre application
 - Dans l'onglet **Bot** vous pouvez copier le **Token**
 
-#### Récupérer son id de channel
+#### Récupérer son id de channel {#id-channel}
 - Sur discord, aller dans vos **Paramètres utilisateur**
 - Aller sur l'onglet **Apparence**
 - En bas, cocher le **Mode développeur**

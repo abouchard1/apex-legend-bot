@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
 
+
 function getCharacterNameByID(id){
     switch(id) {
         case 1:
@@ -38,6 +39,9 @@ async function getInsightsLegends(){
             return x
         })
     }
+    else {
+        return sendError(bot, channelID, 16741235, "Problème de récupération des données...")
+    }
 }
 
 async function getInsightsLegendsKpm(){
@@ -55,7 +59,7 @@ async function getInsightsLegendsKpm(){
         return toto
     }
     else {
-        console.error('error', response)
+        return sendError(bot, channelID, 16741235, "Problème de récupération des données...")
     }
 }
 
@@ -74,9 +78,22 @@ async function getStatsByPseudo(pseudo){
         kill = stats.find(x => x.metadata.key == 'Kills')
         return {nom: pseudo, level: level.value, kills: kill.value}
     }
+    else {
+        return sendError(bot, channelID, 16741235, "Problème de récupération des données...")
+    }
 }
 
 module.exports = {
+    sendError: function sendError(bot, channelID, color, message){
+        bot.sendMessage({
+            to: channelID,
+            message: '',
+            embed: {
+                color: color,
+                title: message
+            }
+        })
+    },
     showCommandBot: function showCommandBot(bot, channelID){
         bot.sendMessage({
             to: channelID,
@@ -93,16 +110,6 @@ module.exports = {
                     {
                         name : "!apex-global-stats",
                         value : 'Affiche les stats globales des legends',
-                        inline: false
-                    },
-                    {
-                        name : "!help",
-                        value : 'Affiche ce que tu vois en ce moment 😁',
-                        inline: false
-                    },
-                    {
-                        name : "!fan",
-                        value : 'Commande bonus',
                         inline: false
                     }
                 ]    
@@ -155,6 +162,9 @@ module.exports = {
     },
 
     apexPseudoStats: async function apexPseudoStats(bot, channelID, pseudo){
+        if (!pseudo) {
+            return sendError(bot, channelID, 16741235, "Le pseudo est requis, exemple: !apex-stats Fr0nde")
+        }
         stats = await getStatsByPseudo(pseudo)
         bot.sendMessage({
             to: channelID,

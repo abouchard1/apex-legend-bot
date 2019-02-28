@@ -14,76 +14,35 @@ const bot = new Discord.Client({
 });
 
 bot.on('ready', async function (evt) {
-    console.log('Connected');
+    bot.sendMessage({
+        to: '550105564336750602',
+        message: 'Bot connecté'
+    });
 });
 
 
 bot.on('message', async function (user, userID, channelID, message, evt) {
-    console.log('test', channelID, message);
+    //console.log('test', channelID, message);
 
     if (message.substring(0, 1) == '!') {
         args = message.substring(1).split(' ');
+
         cmd = args[0];
-        pseudo = args[1];
 
         switch(cmd) {
             case 'help':
                 tools.showCommandBot(bot, channelID)
             break;
-            case 'apex-legends-play':
-                played = await getInsightsLegends()
-                fields_played = []
-                if (played) {
-                    played.forEach(element => {
-                        fields_played.push({
-                            name : element.name,
-                            value : `${element.percentage}%`,
-                            inline: true
-                        })
-                    });
-                }
-                bot.sendMessage({
-                    to: channelID,
-                    message: '',
-                    embed: {
-                        color: 3447003,
-                        title: 'Utilisation des legends',
-                        fields: fields_played,
-                    }
-                });
-            break;
-            case 'apex-legends-kpm':
-                fields_kpm = []
-                kpm = await getInsightsLegendsKpm()
-                if (kpm){
-                    kpm.forEach(element => {
-                        fields_kpm.push({
-                            name : element.name,
-                            value : `${element.value}`,
-                            inline: true
-                        }) 
-                    });
-                }
-                bot.sendMessage({
-                    to: channelID,
-                    message: '',
-                    embed: {
-                        color: 3447003,
-                        title: 'Moyenne des kills par match',
-                        fields: fields_kpm,
-                    }
-                });
-            break;
+
             case 'apex-global-stats':
                 tools.apexGlobalStats(bot, channelID)
             break;
+
             case 'apex-stats':
+                pseudo = args[1];
                 tools.apexPseudoStats(bot, channelID, pseudo)
-            break;
-            case 'fan':
-            bot.sendMessage({
-                to: channelID,
-                message: 'Neimad est fan de Fronde.'})
+            default:
+                tools.sendError(bot, channelID, 16741235, "Commande inconnu, taper !help pour voir la liste des commandes.")
             break;
          }
      }

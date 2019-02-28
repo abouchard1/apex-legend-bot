@@ -24,7 +24,7 @@ const bot = new Discord.Client({
 bot.on('ready', async function (evt) {
     bot.sendMessage({
         to: '550105564336750602',
-        message: `Bot connecté, ${s3}`
+        message: `Bot connecté`
     });
 });
 

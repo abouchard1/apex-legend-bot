@@ -48,6 +48,7 @@ bot.on('message', async function (user, userID, channelID, message, evt) {
             case 'apex-stats':
                 pseudo = args[1];
                 tools.apexPseudoStats(bot, channelID, pseudo)
+            break;
             default:
                 tools.sendError(bot, channelID, 16741235, "Commande inconnu, taper !help pour voir la liste des commandes.")
             break;

@@ -31,7 +31,7 @@ yyyyy = Votre id de channel [Tuto](#id-channel)
   remplacer le APP_ID par votre Client/Application ID
 - Sélectionner votre serveur
 
-#### Récupérer son token discord {#id-token}
+#### <a name="id-token"></a>Récupérer son token discord
 
 - Aller sur la page d'application https://discordapp.com/developers/applications/
 - Sélectionner votre application

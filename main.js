@@ -1,6 +1,13 @@
 const Discord = require('discord.io');
 const fetch = require('node-fetch');
 
+const aws = require('aws-sdk');
+
+let s3 = new aws.S3({
+  accessKeyId: process.env.S3_KEY,
+  secretAccessKey: process.env.S3_SECRET
+});
+
 // On récupère des functions qui écrivent dans le tchat
 const tools = require('./tools.js');
 
@@ -16,7 +23,7 @@ const bot = new Discord.Client({
 bot.on('ready', async function (evt) {
     bot.sendMessage({
         to: '550105564336750602',
-        message: 'Bot connecté'
+        message: `Bot connecté, ${s3}`
     });
 });
 

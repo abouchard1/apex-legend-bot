@@ -32,11 +32,13 @@ yyyyy = Votre id de channel [Tuto](#id-channel)
 - Sélectionner votre serveur
 
 #### Récupérer son token discord {#id-token}
+
 - Aller sur la page d'application https://discordapp.com/developers/applications/
 - Sélectionner votre application
 - Dans l'onglet **Bot** vous pouvez copier le **Token**
 
 #### Récupérer son id de channel {#id-channel}
+
 - Sur discord, aller dans vos **Paramètres utilisateur**
 - Aller sur l'onglet **Apparence**
 - En bas, cocher le **Mode développeur**

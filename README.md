@@ -19,7 +19,7 @@ npm install
 DISCORD_TOKEN=xxxxx CHAN_ID=yyyyy node main
 ```
 
-xxxxx = Votre token discord [Tuto](#id-token)
+xxxxx = Votre token discord [Tuto](https://github.com/twinzxr1/apex-legend-bot/blob/master/README.md#r%C3%A9cup%C3%A9rer-son-token-discord)
 
 yyyyy = Votre id de channel [Tuto](#id-channel)
 

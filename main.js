@@ -1,18 +1,19 @@
 const Discord = require('discord.io');
 const fetch = require('node-fetch');
 
-const aws = require('aws-sdk');
-
-let s3 = new aws.S3({
-  accessKeyId: process.env.S3_KEY,
-  secretAccessKey: process.env.S3_SECRET
-});
-
 // On récupère des functions qui écrivent dans le tchat
 const tools = require('./tools.js');
 
-//On récupère le token d'accès stocké dans le fichier
-const auth = require('./auth.json');
+// Si on passe le token en variable d'environnement
+if (process.env.TOKEN){
+    auth = {
+        "token" : process.env.TOKEN
+    }
+}
+// Sinon récupère le token d'accès stocké dans le fichier
+else {
+    auth = require('./auth.json');
+}
 
 // Initialize Discord Bot
 const bot = new Discord.Client({

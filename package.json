@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/twinzxr1/apex-legend-bot#readme",
   "dependencies": {
-    "aws-sdk": "^2.411.0",
     "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
     "node": "^11.10.0",
     "node-fetch": "^2.3.0"
